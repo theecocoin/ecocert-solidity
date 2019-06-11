@@ -16,7 +16,7 @@ import "./mocks/Finance.sol";
  */
 contract EcoCert is ERC721Full, GrantRole, OperatorRole {
 
-    event GrantCertificate(uint256 id, address indexed receiver, string uri, uint256 value);
+    event GrantCertificate(uint256 id, address indexed receiver, address indexed beneficiary, string uri, uint256 value);
     event CertificateHarvest(uint256 id, uint256 amount);
 
     using Counters for Counters.Counter;
@@ -98,7 +98,7 @@ contract EcoCert is ERC721Full, GrantRole, OperatorRole {
         _data[grantedTokenId] = EcoCertData(value, beneficiary, now);
         _setTokenURI(grantedTokenId, tokenURI);
 
-        emit GrantCertificate(grantedTokenId, receiver, tokenURI, value);
+        emit GrantCertificate(grantedTokenId, receiver, beneficiary, tokenURI, value);
     }
 
     /**
