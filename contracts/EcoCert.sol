@@ -37,8 +37,8 @@ contract EcoCert is ERC721Full, GrantRole, OperatorRole {
 
     constructor()
     ERC721Full(
-        "ECOcertificate",
-        "ECC"
+        "ECO tree certificate",
+        "ETC"
     )
     public
     {
